@@ -3,8 +3,8 @@ Contributors: designorbital
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: icon, icons, icon list, social, social media, font icon, sidebar, font-awesome, icon font, contact, ui, widget
-Requires at least: 3.6
-Tested up to: 3.8
+Requires at least: 3.7
+Tested up to: 3.9
 Stable tag: 0.1
 
 Use an icon list for different purposes on your WordPress site using the Icon List plugin.
