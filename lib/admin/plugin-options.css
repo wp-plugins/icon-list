@@ -1,0 +1,195 @@
+/**
+|------------------------
+| =Clear Floated Elements
+|------------------------
+*/
+
+.kamn-iconlist-clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.kamn-iconlist-clearfix:before,
+.kamn-iconlist-clearfix:after {
+  content: '.';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+}
+
+.kamn-iconlist-clearfix:after {
+  clear: both;
+}
+
+.kamn-iconlist-clearfix {
+  zoom: 1;
+}
+
+/**
+|------------------------
+| =Promo Wrapper
+|------------------------
+*/
+
+.kamn-iconlist-promo-wrapper {
+	margin: 25px 0;
+}
+
+/**
+|------------------------
+| =Options Form
+|------------------------
+*/
+
+#kamn-iconlist-form-wrapper {
+	background-color: #eeeeee;
+	border: 1px solid #e5e5e5;
+	margin-top: 20px;
+}
+
+#kamn-iconlist-form-header,
+#kamn-iconlist-form-footer {
+	text-align: right;
+	padding: 20px;	
+}
+
+#kamn-iconlist-form-header {
+	border-bottom: 1px solid #DFDFDF;
+}
+
+#kamn-iconlist-form-footer {
+	border-top: 1px solid #DFDFDF;
+}
+
+/**
+|------------------------
+| =Options Sidebar
+|------------------------
+*/
+
+#kamn-iconlist-sidebar,
+#kamn-iconlist-main {
+	min-height: 300px;
+}
+
+#kamn-iconlist-sidebar {
+	width: 200px;
+	float: left;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu,
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li {
+	margin: 0;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li.divide {
+	padding: 0px;
+	border-width: 1px 0px 1px 0px;
+	border-style: solid;
+    border-bottom-color: #DFDFDF;
+    border-top-color: #F9F9F9;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li a {
+	display:block;
+	padding: 14px 14px;
+	background: #eeeeee;
+	border-top: solid 1px #F9F9F9;
+	border-right: solid 1px #DFDFDF;
+	border-bottom: solid 1px #DFDFDF;
+	border-left: none;
+	color: #333333;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li a.custom-tab {
+	background: #f6f6f6;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li a img {
+	width: 16px;
+	height: 16px;
+	margin-bottom:-3px;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li a:hover {
+	background:#f9f9f9;
+}
+
+#kamn-iconlist-sidebar #kamn-iconlist-group-menu li.active a {
+	background:#ffffff;
+	border-right: none;
+}
+
+/**
+|------------------------
+| =Options Main
+|------------------------
+*/
+
+#kamn-iconlist-main {
+	background: #FFFFFF;
+	margin-left: 200px;
+	padding: 16px 20px 1px 20px;
+}
+
+.kamn-iconlist-group-tab {
+	display: none;
+}
+
+.kamn-iconlist-group-tab h3 {
+	margin: 0 0 18px 0;
+	padding: 0 0 18px 0;
+	border-bottom: 1px solid #DFDFDF;
+	font-size: 21px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+.kamn-iconlist-group-tab .kamn-iconlist-section-desc {
+	font-style: italic;
+	border-bottom: 1px solid #DFDFDF;
+	padding: 0 0 18px 0;
+	margin: 0 0 30px 0;
+}
+
+.kamn-iconlist-group-tab .kamn-iconlist-section-desc p.description {
+	margin: 0;
+	padding: 0;
+}
+
+.kamn-iconlist-group-tab select {
+	width: 35%;
+}
+
+.kamn-iconlist-group-tab input[type="text"] {
+	width: 50%;
+}
+
+/**
+|------------------------
+| =Options Form Table
+|------------------------
+*/
+
+.kamn-iconlist-group-tab .form-table {
+	clear: none;
+}
+
+.kamn-iconlist-group-tab .form-table th {
+	font-weight: bold;
+	padding: 0 0 30px 0;
+}
+
+.kamn-iconlist-group-tab .form-table td {
+	padding: 0 0 30px 0;
+}
