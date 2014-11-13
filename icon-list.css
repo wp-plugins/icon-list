@@ -22,7 +22,6 @@
 .widget-iconlist-kamn ul.widget-iconlist {
   list-style: none;
   padding-left: 0 !important;
-  margin-left: 2.142857142857143em !important;
 }
 .widget-iconlist-kamn ul.widget-iconlist:before,
 .widget-iconlist-kamn ul.widget-iconlist:after {
@@ -35,10 +34,9 @@
 .widget-iconlist-kamn ul.widget-iconlist > li {
   position: relative;
 }
+.widget-iconlist-kamn ul.widget-iconlist > li .iconlist-title {
+}
 .widget-iconlist-kamn ul.widget-iconlist > li .iconlist-icon {
-  position: absolute;
-  width: 2.142857142857143em;
-  left: -2.142857142857143em;
-  top: 0.14285714285714285em;
-  text-align: center;
+  display: inline-block;
+  margin: 0 10px 0 0;
 }

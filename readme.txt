@@ -3,9 +3,9 @@ Contributors: designorbital
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: icon, icons, icon list, social, social media, font icon, sidebar, font-awesome, icon font, contact, ui, widget
-Requires at least: 3.7
-Tested up to: 3.9
-Stable tag: 0.1
+Requires at least: 3.8
+Tested up to: 4.0
+Stable tag: 0.2
 
 Use an icon list for different purposes on your WordPress site using the Icon List plugin.
 
@@ -37,6 +37,11 @@ Icon List plugin is developed by marketplace of [Premium WordPress Themes](http:
 4. Icon List Plugin Widget Frontend Example: Here is the example of Icon List widget as a Contact Info widget in the sidebar of your theme.
 
 == Changelog ==
+
+= 0.2 - November 13, 2014 =
+
+* Enhancement: Icon List interface updated.
+* Update: Font Awesome updated to 4.2.0.
 
 = 0.1 =
 

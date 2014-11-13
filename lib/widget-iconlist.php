@@ -4,55 +4,55 @@
 **********************************************/
 
 class Kamn_Widget_Iconlist extends WP_Widget {
-	
+
 	/**
 	 *  Set up the widget's unique name, ID, class, description, and other options.
-	 */	
+	 */
 	function __construct() {
-		
+
 		/* Set up the widget options. */
-		$widget_options = array( 
-			'classname' => 'widget-iconlist-kamn', 
+		$widget_options = array(
+			'classname' => 'widget-iconlist-kamn',
 			'description' => esc_html__( 'A widget to display list using icons.', 'kamn-iconlist' )
 		);
-		
+
 		/* Set up the widget control options. */
 		$control_options = array(
 			'width' => 300,
 			'height' => 250
 		);
-		
+
 		/* Create the widget. */
 		$this->WP_Widget( 'widget-iconlist-kamn', __( 'Icon List', 'kamn-iconlist'), $widget_options, $control_options );
-		
+
 	}
-	
+
 	/**
 	 * Outputs the widget based on the arguments input through the widget controls.
 	 *
 	 * @param array $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * @param array $instance The settings for the particular instance of the widget
 	 */
-	
+
 	function widget( $args, $instance ) {
-		
+
 		/** Global Data */
 		global $post;
-		
+
 		/** Extract Args */
 		extract( $args );
-		
+
 		/** Set up the default form values. */
 		$defaults = $this->kamn_iconlist_defaults();
-		
+
 		/** Merge the user-selected arguments with the defaults. */
 		$instance = wp_parse_args( (array) $instance, $defaults );
 
 		/** Open the output of the widget. */
 		echo $before_widget;
-		
+
 ?>
-		<div class="widget-iconlist-global-wrapper">        
+		<div class="widget-iconlist-global-wrapper">
 			<div class="widget-iconlist-container">
 
 				<?php if( !empty( $instance['title'] ) ): ?>
@@ -61,30 +61,30 @@ class Kamn_Widget_Iconlist extends WP_Widget {
 					<?php echo $before_title . '<span>' . apply_filters( 'widget_title',  $instance['title'], $instance, $this->id_base ) . '</span>' . $after_title; ?>
 				  </div>
 				</div>
-				<?php endif; ?>            
-	          
+				<?php endif; ?>
+
 	          	<div class="widget-iconlist-row">
 		          	<div class="widget-iconlist-col">
-			          
+
 						<ul class="widget-iconlist <?php echo $widget_id; ?>">
 							<?php foreach( $instance['iconlist_skeleton'] as $val ) : ?>
-							<li><span class="iconlist-icon fa <?php echo $val['icon']; ?>"></span><?php echo $val['title']; ?></li>
+							<li><span class="iconlist-icon fa fa-fw <?php echo $val['icon']; ?>"></span><span class="iconlist-title"><?php echo $val['title']; ?></span></li>
 							<?php endforeach; ?>
-						</ul>	          
-	          		
+						</ul>
+
 	          		</div>
           		</div>
-          	
-          	</div> <!-- End .widget-global-wrapper -->        
+
+          	</div> <!-- End .widget-global-wrapper -->
         </div>
-        
-<?php		
-		
+
+<?php
+
 		/** Close the output of the widget. */
 		echo $after_widget;
-	
+
 	}
-	
+
 	/** Updates the widget control options for the particular instance of the widget.
 	 *
 	 * This function should check that $new_instance is set correctly.
@@ -99,22 +99,22 @@ class Kamn_Widget_Iconlist extends WP_Widget {
 
 		/** Default Args */
 		$defaults = $this->kamn_iconlist_defaults();
-		
-		/** Update Logic */		
+
+		/** Update Logic */
 		$instance = $old_instance;
-		foreach( $defaults as $key => $val ) {		
-			if( $key != 'iconlist_skeleton' ) {			
-				$instance[$key] = strip_tags( $new_instance[$key] );			
-			}		
+		foreach( $defaults as $key => $val ) {
+			if( $key != 'iconlist_skeleton' ) {
+				$instance[$key] = strip_tags( $new_instance[$key] );
+			}
 		}
 		$instance['iconlist_skeleton'] = $new_instance['iconlist_skeleton'];
 		return $instance;
 
 	}
-	
+
 	/**
 	 *
-	 * Displays the widget control options in the Widgets admin screen. 
+	 * Displays the widget control options in the Widgets admin screen.
 	 *
 	 * @param array $instance Current settings
 	 */
@@ -122,10 +122,10 @@ class Kamn_Widget_Iconlist extends WP_Widget {
 
 		/** Set up the default form values. */
 		$defaults = $this->kamn_iconlist_defaults();
-		
+
 		/** Merge the user-selected arguments with the defaults. */
 		$instance = wp_parse_args( (array) $instance, $defaults );
-		
+
 		$title = strip_tags( $instance['title'] );
 		$iconlist_number = range( 1, 50 );
 		$icon_utilities = array( 'fa' => 'Font Awesome' );
@@ -148,16 +148,16 @@ class Kamn_Widget_Iconlist extends WP_Widget {
 			  <?php endforeach; ?>
             </select>
 		</p>
-        
-        <?php 
-		foreach ( $iconlist_number as $val ):		
+
+        <?php
+		foreach ( $iconlist_number as $val ):
 		$title = isset( $instance['iconlist_skeleton'][$val]['title'] )? $instance['iconlist_skeleton'][$val]['title']: '';
 		$icon_utility = isset( $instance['iconlist_skeleton'][$val]['icon_utility'] )? $instance['iconlist_skeleton'][$val]['icon_utility']: 'fa';
-		$icon = isset( $instance['iconlist_skeleton'][$val]['icon'] )? $instance['iconlist_skeleton'][$val]['icon']: '';		
+		$icon = isset( $instance['iconlist_skeleton'][$val]['icon'] )? $instance['iconlist_skeleton'][$val]['icon']: '';
 		?>
-        
+
         <p><strong><?php _e( 'Icon List', 'kamn-iconlist' ); ?> <?php echo $val; ?></strong></p>
-        
+
         <p>
 			<label><?php _e( 'Title:', 'kamn-iconlist' ); ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'iconlist_skeleton' ); ?>[<?php echo $val; ?>][title]" value="<?php echo esc_attr( $title ); ?>" />
@@ -171,37 +171,37 @@ class Kamn_Widget_Iconlist extends WP_Widget {
 			  <?php endforeach; ?>
             </select>
 		</p>
-        
+
         <p>
 			<label><?php _e( 'Icon Code:', 'kamn-iconlist' ); ?></label>
 			<input type="text" class="widefat" name="<?php echo $this->get_field_name( 'iconlist_skeleton' ); ?>[<?php echo $val; ?>][icon]" value="<?php echo esc_attr( $icon ); ?>" />
 			<small><?php printf( __( 'For Font Awesome: <strong>fa-adjust</strong> - <a href="%1$s" target="_blank">Choose Font Awesome Icons</a>', 'kamn-iconlist' ), kamn_iconlist_external_link( 'fa-icons' ) ); ?></small><br />
 		</p>
-        
-        <?php 
+
+        <?php
 		if( $val >= $instance['iconlist_number'] ) {
 			break;
 		}
 		endforeach;
 		?>
 
-<?php		
+<?php
 	}
-	
-	/** Set up the default form values. */	
+
+	/** Set up the default form values. */
 	function kamn_iconlist_defaults() {
-		
+
 		$defaults = array(
 			'title' => esc_attr__( 'Icon List', 'kamn-iconlist'),
 			'iconlist_number' => 1,
-			'iconlist_skeleton' => array( '1' => array( 
+			'iconlist_skeleton' => array( '1' => array(
 				'title' => 'Address: Fusce arcu mauris, convallis amet. Dignissim ultrices odio.',
 				'icon_utility' => 'fa',
 				'icon' => 'fa-map-marker' ) )
 		);
-		
+
 		return $defaults;
-		
+
 	}
-	
+
 }
